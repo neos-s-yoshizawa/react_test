@@ -1,0 +1,171 @@
+@charset "UTF-8";
+
+
+/* ------------------------------
+ INIT
+------------------------------ */
+
+html, body, div, p, ul, ol, li,
+h1, h2, h3, h4, h5,
+header, footer, section, article,
+input, textarea, button {
+  margin: 0;
+  padding: 0;,
+  border: 0;
+  line-height: 1.0;
+  user-select: none;
+}
+
+body, input {
+  font-family: 'Meiryo';
+  color: #555;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+
+
+
+/* ------------------------------
+BASE
+------------------------------ */
+
+header {
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  height: 45px;
+  padding: 0 15px;
+  background: #98e0b1;
+  color: #8bcca1;
+  text-shadow: -1px -1px 0px rgba(0,0,0,0.2);
+}
+h1 {
+  line-height: 45px;
+}
+.menu-button {
+  background: none;
+  border: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45px;
+  height: 45px;
+  font-size: 35px;
+  color: #fff;
+  cursor: pointer;
+}
+.menu-button:focus {
+  outline: 0;
+  background: #8bcca1;
+}
+
+a {
+  text-decoration: none;
+  color: #98e0b1;
+}
+a:hover, a:focus {
+  outline: 0;
+  background: #f9f9f9;
+}
+
+
+
+
+/* ------------------------------
+ PARTS
+------------------------------ */
+
+/* Todo Form
+------------------------------ */
+
+/* Input Form */
+.new-todo-input-form {
+  margin: 5px;
+}
+
+input[type="text"] {
+  box-sizing: border-box;
+  border: 0;
+  width: calc(100% - 30px); /* 30px: submit button width */
+  height: 30px;
+  line-height: 30px;
+  padding: 0 5px;
+  border-bottom: 1px solid #98e0b1;
+}
+input[type="text"]:focus {
+  outline: 0;
+  background: #f9f9f9;
+}
+
+/* Submit Button */
+input[type="submit"] {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  border: 0;
+  color: #98e0b1;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+}
+input[type="submit"]:focus {
+  outline: 0;
+  background: #f9f9f9;
+}
+
+/* Todo All Change */
+.todo-form > div {
+  text-align: right;
+  padding-right: 5px;
+}
+.todo-form > div a {
+  font-size: 0.8em;
+  padding: 0 5px;
+}
+.todo-form > div a:not(:last-child) {
+  margin-right: 5px;
+}
+
+
+/* Todo List
+------------------------------ */
+
+/* Todo List */
+.todo-list {
+  margin-top: 30px;
+}
+.todo-list li label {
+  height: 30px;
+  line-height: 30px;
+  position: relative;
+  padding-left: 30px;
+}
+.todo-list li label:before {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  margin-top: -10px;
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: 1px solid #98e0b1;
+  box-sizing: border-box;
+}
+.todo-list li label.checked {
+  text-decoration: line-through;
+  color: #ccc;
+}
+.todo-list li label.checked:before {
+  content: "";
+  background: #98e0b1;
+}
+
+/* Todo Checkbox */
+input[type="checkbox"] {
+  display: none;
+}
