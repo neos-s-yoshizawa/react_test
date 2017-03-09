@@ -1,10 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Header from './_header.jsx';
-import Body from './_body.jsx';
-import Footer from './_footer.jsx';
-
+import Header from './modules/_header.jsx';
+import Footer from './modules/_footer.jsx';
 import Todo from './todolist/Todo.jsx';
 
 function Contents() {

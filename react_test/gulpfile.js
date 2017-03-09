@@ -20,7 +20,8 @@ gulp.task('watch', function() {
 gulp.task('webserver', function() {
   gulp.src('./app/')
     .pipe(webserver({
-      host: '127.0.0.1',
+      host: 'localhost',
+      port: 80,
       livereload: true
     })
   );
