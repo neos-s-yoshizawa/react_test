@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Header from './modules/_header.jsx';
-import Footer from './modules/_footer.jsx';
-import Todo from './todolist/Todo.jsx';
+import { config } from './config';
+
+import Header from './modules/_header';
+import Footer from './modules/_footer';
+import Todo from './todolist/Todo';
 
 function Contents() {
   return (
