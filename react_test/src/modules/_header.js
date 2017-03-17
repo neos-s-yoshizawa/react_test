@@ -5,7 +5,7 @@ export default class Header extends React.Component {
     return (
       <header>
         <h1>Todo List</h1>
-        <button className="menu-button">≡</button>
+        <a className="nav-button" href="#"><i></i></a>
       </header>
     );
   }

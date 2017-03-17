@@ -16,11 +16,6 @@ input, textarea, button {
   user-select: none;
 }
 
-body, input {
-  font-family: 'Meiryo';
-  color: #555;
-}
-
 ul li {
   list-style-type: none;
 }
@@ -32,6 +27,11 @@ ul li {
 BASE
 ------------------------------ */
 
+body, input {
+  font-family: 'Meiryo';
+  color: #555;
+}
+
 header {
   box-sizing: border-box;
   position: relative;
@@ -42,24 +42,9 @@ header {
   color: #8bcca1;
   text-shadow: -1px -1px 0px rgba(0,0,0,0.2);
 }
+
 h1 {
   line-height: 45px;
-}
-.menu-button {
-  background: none;
-  border: 0;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 45px;
-  height: 45px;
-  font-size: 35px;
-  color: #fff;
-  cursor: pointer;
-}
-.menu-button:focus {
-  outline: 0;
-  background: #8bcca1;
 }
 
 a {
@@ -77,6 +62,49 @@ a:hover, a:focus {
 /* ------------------------------
  PARTS
 ------------------------------ */
+
+/* Nav Button
+------------------------------ */
+
+.nav-button {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45px;
+  height: 45px;
+  color: #fff;
+}
+.nav-button:hover,
+.nav-button:focus {
+  background: #8bcca1;
+}
+.nav-button i,
+.nav-button i:before,
+.nav-button i:after {
+  position: absolute;
+  display: block;
+  width: 32px;
+  height: 3px;
+  background: #fff;
+}
+.nav-button i:before,
+.nav-button i:after {
+  content: '';
+}
+.nav-button i {
+  top: 50%;
+  left: 50%;
+  margin-top: calc(-3px / 2);
+  margin-left: calc(-32px / 2);
+}
+.nav-button i:before {
+  top: -10px;
+}
+.nav-button i:after {
+  bottom: -10px;
+}
+
 
 /* Todo Form
 ------------------------------ */
@@ -105,6 +133,7 @@ input[type="submit"] {
   display: inline-block;
   width: 30px;
   height: 30px;
+  margin-top: 2px;
   background: #fff;
   border: 0;
   color: #98e0b1;
@@ -112,6 +141,7 @@ input[type="submit"] {
   text-align: center;
   vertical-align: middle;
 }
+input[type="submit"]:hover,
 input[type="submit"]:focus {
   outline: 0;
   background: #f9f9f9;
