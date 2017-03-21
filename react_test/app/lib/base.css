@@ -39,12 +39,12 @@ header {
   height: 45px;
   padding: 0 15px;
   background: #98e0b1;
-  color: #8bcca1;
-  text-shadow: -1px -1px 0px rgba(0,0,0,0.2);
 }
 
 h1 {
   line-height: 45px;
+  color: #8bcca1;
+  text-shadow: -1px -1px 0px rgba(0,0,0,0.2);
 }
 
 a {
@@ -56,6 +56,9 @@ a:hover, a:focus {
   background: #f9f9f9;
 }
 
+header a:hover, header a:focus {
+  background: #8bcca1;
+}
 
 
 
@@ -103,6 +106,20 @@ a:hover, a:focus {
 }
 .nav-button i:after {
   bottom: -10px;
+}
+
+
+/* Logout Button
+------------------------------ */
+
+.logout-button {
+  position: absolute;
+  top: 50%;
+  right: calc(45px + 10px);
+  margin-top: -14px;
+  padding: 5px 10px;
+  border: 1px solid #8bcca1;
+  color: #fff;
 }
 
 

@@ -7,7 +7,6 @@
 </head>
 <body>
 <div id="container"></div>
-<button onClick="logout();">ログアウト</button>
 
 <script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
 <script>
@@ -20,15 +19,6 @@
     messagingSenderId: "1007491313324"
   };
   firebase.initializeApp(config);
-
-  function logout() {
-    firebase.auth().signOut().then(function() {
-      location.reload();
-      // Sign-out successful.
-    }, function(error) {
-      // An error happened.
-    });
-  }
 </script>
 <script src="lib/app.js"></script>
 </body>

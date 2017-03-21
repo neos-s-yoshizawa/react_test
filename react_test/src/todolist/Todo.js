@@ -46,12 +46,14 @@ export default class Todo extends React.Component {
     this.setState({todo: this.todolist});
     saveTodo(this.todolist);
   }
+
   changeTodoState(obj) {
     let todono = obj.target.getAttribute('data-todono');
     this.todolist[todono].status = this.todolist[todono].status ? UNDONE : DONE;
     this.setState({todo: this.todolist});
     saveTodo(this.todolist);
   }
+
   changeAllTodo(obj) {
     switch (obj.target.getAttribute('data-changeType')) {
       case 'clear':

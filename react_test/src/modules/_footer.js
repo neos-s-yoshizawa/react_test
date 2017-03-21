@@ -8,7 +8,7 @@ export default class Footer extends React.Component {
   render() {
     return (
       <footer>
-        こんにちは、{this.props.userName}さん
+        こんにちは、{this.props.userData.name}({this.props.userData.email})さん
       </footer>
     );
   }
