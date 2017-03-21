@@ -27,19 +27,25 @@ export default class Body extends React.Component {
     super(props);
     this.state = {
       login: false,
-      userName: ''
+      loadComp: false,
+      userData: {
+        name: '',
+        email: ''
+      }
     };
     this.loginCheck = this.loginCheck(this);
+    // this.logout = this.logout(this);
   }
 
-  loginCheck(login) {
+  loginCheck(props) {
     firebase.auth().onAuthStateChanged(function(user) {
       console.log(user);
       if (user) {
         // User is signed in.
-        login.setState({login: true, userName: user.displayName});
+        props.setState({login: true, loadComp: true, userData: {name: user.displayName, email: user.email}});
       } else {
         // No user is signed in.
+        props.setState({login: false, loadComp: true});
       }
     });
   }
@@ -69,21 +75,34 @@ export default class Body extends React.Component {
     });
   }
 
+  logout(props) {
+    firebase.auth().signOut().then(function() {
+      location.reload();
+      // Sign-out successful.
+    }, function(error) {
+      // An error happened.
+    });
+  }
+
   render() {
     this.loginCheck;
     if(!this.state.login) {
-      return (
-        <div className="message">
-          <p>ログインが必要です</p>
-          <button onClick={this.login}>ログイン</button>
-        </div>
-      );
+      if(this.state.loadComp) {
+        return (
+          <div className="message">
+            <p>ログインが必要です</p>
+            <button onClick={this.login}>ログイン</button>
+          </div>
+        );
+      } else {
+        return <p>LOADING...</p>;
+      }
     }
     return (
       <article>
-        <Header />
+        <Header logout={this.logout} />
         <Todo />
-        <Footer userName={this.state.userName} />
+        <Footer userData={this.state.userData} />
       </article>
     );
   }
