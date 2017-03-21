@@ -2,10 +2,34 @@
 <html>
 <head lang="ja">
   <meta charset="UTF-8">
+  <title>Todo List</title>
   <link rel="stylesheet" href="lib/base.css">
 </head>
 <body>
 <div id="container"></div>
+<button onClick="logout();">ログアウト</button>
+
+<script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBZURdCIXSIYzN-fu5chDE-zc6_C-C9FD0",
+    authDomain: "reacttest-48bff.firebaseapp.com",
+    databaseURL: "https://reacttest-48bff.firebaseio.com",
+    storageBucket: "reacttest-48bff.appspot.com",
+    messagingSenderId: "1007491313324"
+  };
+  firebase.initializeApp(config);
+
+  function logout() {
+    firebase.auth().signOut().then(function() {
+      location.reload();
+      // Sign-out successful.
+    }, function(error) {
+      // An error happened.
+    });
+  }
+</script>
 <script src="lib/app.js"></script>
 </body>
 </html>

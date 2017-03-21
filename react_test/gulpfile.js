@@ -5,7 +5,7 @@ var source = require("vinyl-source-stream");
 var webserver = require('gulp-webserver');
 
 gulp.task('browserify', function() {
-  browserify('./src/app.jsx', { debug: true })
+  browserify('./src/app.js', { debug: true })
     .transform(babelify)
     .bundle()
     .on("error", function (err) { console.log("Error : " + err.message); })
@@ -27,4 +27,4 @@ gulp.task('webserver', function() {
   );
 });
 
-gulp.task('default', ['browserify', 'watch','webserver']);
+gulp.task('default', ['browserify', 'watch', 'webserver']);
